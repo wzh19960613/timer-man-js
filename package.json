@@ -1,16 +1,16 @@
 {
     "name": "timer-man",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Wzh <wzh@uvwee.com>",
     "repository": "github:wzh19960613/timer-man-js",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "devDependencies": {
-        "@types/bun": "^1.1.11",
+        "@types/bun": "^1.1.12",
         "bun-plugin-dts": "^0.3.0",
         "mitt": "^3.0.1"
     },
-    "description": "A reusable Timer and some utils",
+    "description": "A collection of useful time-related functions and a powerful Timer class",
     "keywords": [
         "timer",
         "time",

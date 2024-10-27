@@ -73,7 +73,7 @@ export class Timer<T> implements TimerOptions {
     set running(to) { to ? this.start() : this.stop() }
     get events() { return this.#emitter }
     get callTimes() { return this.#callTimes }
-    get remainTimes() { return this.maxTimes ? this.maxTimes - this.#callTimes : 0 }
+    get remainTimes() { return this.maxTimes ? this.maxTimes - this.#callTimes : Infinity }
     get hasMoreTrigger() {
         return this.repeat && (this.maxTimes === undefined || this.#callTimes < this.maxTimes - 1)
     }
@@ -81,14 +81,14 @@ export class Timer<T> implements TimerOptions {
     start() {
         if (this.#handle) return this
         this.#callTimes = 0
-        this.#emitter.emit('running-changed', true)
+        this.#emitter.emit('runningChanged', true)
         return this.#start()
     }
 
     stop() {
         if (!this.#handle) return
         clearTimeout(this.#handle)
-        this.#emitter.emit('running-changed', false)
+        this.#emitter.emit('runningChanged', false)
         this.#stop()
     }
 
@@ -118,7 +118,7 @@ export class Timer<T> implements TimerOptions {
     #triggerResolvers: ((result: T) => void)[] = []
     #triggerRejectors: ((reason: any) => void)[] = []
     #stopResolvers: (() => void)[] = []
-    #emitter: Emitter<{ 'running-changed': boolean, 'triggered': T }> = mitt()
+    #emitter: Emitter<{ 'runningChanged': boolean, 'triggered': T }> = mitt()
 
     #call() {
         this.#callTimes += 1
