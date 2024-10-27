@@ -1,5 +1,7 @@
 # timer-man
 
+English | [中文](README_CN.md)
+
 A collection of useful time-related functions and a powerful Timer class
 
 ## Installation

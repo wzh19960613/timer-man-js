@@ -1,5 +1,7 @@
 # timer-man
 
+[English](README.md) | 中文
+
 一系列实用的时间相关函数和一个功能强大的Timer类
 
 ## 安装
