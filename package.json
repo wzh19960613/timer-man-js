@@ -2,7 +2,10 @@
     "name": "timer-man",
     "version": "1.0.2",
     "author": "Wzh <wzh@uvwee.com>",
-    "repository": "github:wzh19960613/timer-man-js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wzh19960613/timer-man-js.git"
+    },
     "main": "dist/index.js",
     "module": "dist/index.js",
     "devDependencies": {
